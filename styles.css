@@ -69,7 +69,6 @@ body {
 }
 
 .section__game {
-  height: 100vh;
   padding: 5rem;
   @media (width < 60rem) {
     padding: 2rem;
