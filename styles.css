@@ -14,7 +14,21 @@ html {
   font-family: "Chakra Petch", sans-serif;
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  @media (width < 112.5em) {
+    font-size: 67.5%;
+  }
+  @media (width < 75em) {
+    font-size: 56.25%;
+  }
+  @media (width < 56.25em) {
+    font-size: 50%
+  }
+  @media (width < 37.5em) {
+    font-size: 43.75%;
+  }
 }
+
 
 body {
   background-image: linear-gradient(to top right, #fee8e8 50%, #b26984 50%);
@@ -73,27 +87,36 @@ body {
 
 .game__heading {
   font-size: 4rem;
-  @media (width < 60rem) {
-    display: none;
+
+  @media (width < 120rem) {
+    font-size: 2rem;
   }
+
 }
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  
+  display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   perspective: 1000px;
   margin: 3rem 0;
-  @media (width < 60rem) {
+  @media (width < 56.25em) {
     margin: 1rem 0;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (width < 37.5em) {
+    margin: 1rem 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .card {
-  flex: 0 0 18%;
-  aspect-ratio: 16 / 12;
   position: relative;
   transition: all 0.2s;
   perspective: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .card:hover {
@@ -102,12 +125,11 @@ body {
 
 .card__image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius);
 }
 .card__meaning {
-  margin-top: 2rem;
   font-size: 1.75rem;
   padding: 1rem 1.5rem;
   background: #9f6443;

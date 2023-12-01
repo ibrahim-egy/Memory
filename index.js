@@ -134,6 +134,7 @@ const generateRandomImages = () => {
     cardMeanings[i].innerHTML = randomImage.meaning;
   }
 };
+
 generateRandomImages();
 actionButton.addEventListener("click", () => {
   // Show all images
